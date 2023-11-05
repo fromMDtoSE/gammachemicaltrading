@@ -24,46 +24,47 @@ function App() {
 
 export default App;
 
-/*const express = require('express');
-const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
+/*import Axios from 'axios';
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-app.post('/send-email', (req, res) => {
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  try {
+    const response = await Axios.post('/your-api-endpoint', {
+      name,
+      email,
+      message,
+    });
+
+    // Handle the response (success or error) here
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey('your-sendgrid-api-key');
+
+app.post('/your-api-endpoint', async (req, res) => {
   const { name, email, message } = req.body;
 
-  // Create a Nodemailer transporter with your email configuration
-  const transporter = nodemailer.createTransport({
-    service: 'YourEmailService', // e.g., 'Gmail', 'Outlook', etc.
-    auth: {
-      user: 'your@email.com',
-      pass: 'your-password',
-    },
-  });
-
-  // Email data
-  const mailOptions = {
-    from: 'your@email.com',
-    to: 'your-work-email@company.com',
-    subject: 'Contact Form Submission',
+  const msg = {
+    to: 'haya.qaqish@gammachecmicaltrading.com',
+    from: 'your-email@example.com', // Use a verified sender email from SendGrid
+    subject: 'Contact Us Form Submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
-  // Send the email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      res.status(500).send('Email not sent');
-    } else {
-      console.log('Email sent: ' + info.response);
-      res.status(200).send('Email sent successfully');
-    }
-  });
-});
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-}); */
+  try {
+    await sgMail.send(msg);
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false });
+  }
+});*/
