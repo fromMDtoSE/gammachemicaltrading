@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative; /* Add this to make the text positioned relative to the container */
+}
+
+.container img {
+    width: 30%;
+    transform: translateY(-20%);
+    height: 100%;
+}
+
+.container p {
+    position: absolute; /* Position the text absolutely within the container */
+    top: 30%; /* Adjust as needed to vertically center the text */
+    transform: translateY(-50%); /* Center vertically */
+    font-size: 32pt;
+    font-family: inherit;
+    font-weight: 600;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7); /* Background color for the text */
+    padding: 10px; /* Optional padding for better readability */
+}
