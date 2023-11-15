@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavBar } from "../navbar";
 import './index.css';
+import '../../../netlify/functions/email'
 
 export const ContactPage = () => {
     const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ export const ContactPage = () => {
         event.preventDefault(); // Prevents default form submission behavior
 
         try {
-            const response = await fetch('/.netlify/functions/email.js', {
+            const response = await fetch('../../../netlify/functions/email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
