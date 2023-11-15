@@ -13,7 +13,7 @@ export const ContactPage = () => {
         event.preventDefault(); // Prevents default form submission behavior
 
         try {
-            const response = await fetch('/.netlify/functions/send-email', {
+            const response = await fetch('/.netlify/functions/email.js', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
