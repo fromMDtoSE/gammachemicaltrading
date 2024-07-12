@@ -1,4 +1,5 @@
 ﻿import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 
 export default function Clients() {
   const logosRef = useRef<HTMLUListElement>(null);
@@ -24,51 +25,67 @@ export default function Clients() {
                 className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
               >
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/facebook.svg"
                     alt="Facebook"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/disney.svg"
                     alt="Disney"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/airbnb.svg"
                     alt="Airbnb"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/apple.svg"
                     alt="Apple"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/spark.svg"
                     alt="Spark"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/samsung.svg"
                     alt="Samsung"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/quora.svg"
                     alt="Quora"
+                    width = {100}
+                    height={100}
                   />
                 </li>
                 <li>
-                  <img
+                  <Image
                     src="https://cruip-tutorials.vercel.app/logo-carousel/sass.svg"
                     alt="Sass"
+                    width = {100}
+                    height={100}
                   />
                 </li>
               </ul>
