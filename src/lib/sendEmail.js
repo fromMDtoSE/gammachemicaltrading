@@ -2,7 +2,8 @@
 
 import nodemailer from 'nodemailer';
 
-async function main(formData) {
+export default async function main(formData) {
+  console.log(process.env.GMAIL_USER, process.env.GMAIL_PASS, formData)
   const transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
@@ -20,7 +21,7 @@ async function main(formData) {
     // send mail with defined transport object
     const info = await transporter.sendMail({
       from: `${email} <${email}>`,
-      to: process.env.GMAIL_USERGMAIL_USER, // Replace with the recipient email address
+      to: "support@gammachemicaltrading.com", // Replace with the recipient email address
       subject: "New Inquiry from Contact Form",
       html: `
                 <p><strong>Name:</strong> ${firstname} ${lastname}</p>
@@ -40,5 +41,3 @@ async function main(formData) {
     throw error; // Throw the error to handle it in the calling function or component
   }
 }
-
-export default main;

@@ -15,7 +15,7 @@ import { Fragment, useState } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import main from "../../../api/sendEmail";
+import main from "@/lib/sendEmail";
 
 // Define the type for an individual product option
 type ProductOption = {
@@ -51,7 +51,7 @@ export default function SimpleForm() {
             productDropDown: [],
             offeringsDropDown: [],
             message: "",
-        },
+        }
     });
 
     // Define the type for the offerings options map
@@ -109,11 +109,10 @@ export default function SimpleForm() {
         console.log("Form submitted with values:", values);
         try {
             await main(values); // Call main function to send email with form values
-            alert("Email sent successfully!");
-            form.reset(); // Optionally reset the form after successful submission
+            form.reset();// Optionally reset the form after successful submission
+            
         } catch (error) {
             console.error("Error sending email:", error);
-            alert("Failed to send email. Please try again later.");
         }
     }
 
