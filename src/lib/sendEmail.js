@@ -3,15 +3,14 @@
 import nodemailer from 'nodemailer';
 
 export default async function main(formData) {
-  console.log(process.env.GMAIL_USER, process.env.GMAIL_PASS, formData)
   const transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
-      user: process.env.GMAIL_USER, // Replace with your Gmail email address
-      pass: process.env.GMAIL_PASS, // Replace with your Gmail password or app-specific password
+      user: "haya.qaqish@gammachemicaltrading.com", // Replace with your Gmail email address
+      pass: "karu gzvw rlkn attd", // Replace with your Gmail password or app-specific password
     },
   });
 
