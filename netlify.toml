@@ -1,7 +1,12 @@
-# Static site: nothing to build. The inquiry form is picked up by Netlify Forms at deploy time.
+# Static site: nothing to build. Only public/ is published, so the README and other repo files are not served.
+# The inquiry form (data-netlify in public/index.html) is picked up by Netlify Forms at deploy time.
 [build]
   command = "echo 'Static site, nothing to build'"
-  publish = "."
+  publish = "public"
+
+# The Netlify UI still has the Next.js runtime plugin installed from the old site. This tells it to stand down.
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[headers]]
   for = "/assets/*"
